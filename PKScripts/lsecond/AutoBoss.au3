@@ -6,9 +6,9 @@ Global $Paused
 
 ;Sleep(3000000)
 ;PieTime() ;One-time function call
+CloseTV() ;10 seconds
 Sleep(1000)
 While 1 ;Infinite loop
-    CloseTV() ;10 seconds
     TowerTraverse() ;9 seconds
  	BossScroll() ;Unknown amount of time
 	;GuildBoss() ;20 seconds @@@@@@@@@@@@DOESN'T WORK
@@ -46,9 +46,9 @@ Func TowerTraverse()
     MouseClick("left",215,75)
     Sleep(4000)
    ;Click Regular Enter button
-    ;MouseClick("left",625,330)
+    MouseClick("left",625,330)
    ;Click Limited Enter button
-    MouseClick("left",625,545)
+    ;MouseClick("left",625,545)
     Sleep(1000)
    ;Drag bottom to top to scroll floor select down
     MouseClickDrag("left",335,460,335,155)
