@@ -8,13 +8,21 @@ Global $Paused
 ;PieTime() ;One-time function call
 Sleep(1000)
 While 1 ;Infinite loop
+    CloseTV() ;10 seconds
     TowerTraverse() ;9 seconds
  	BossScroll() ;Unknown amount of time
 	;GuildBoss() ;20 seconds @@@@@@@@@@@@DOESN'T WORK
 	;Sleep(1730000) ;Subtract the current action time. Sum >= 1800 seconds
 WEnd
 
-
+;TeamViewer's annoying pop-up
+Func CloseTV()
+    Sleep(30000)
+    MouseClick("left",872,443) ;Globally Press 'OK'
+	Sleep(5000)
+	MouseClick("left",1030,55) ;Close Announcements/Click Event button & reset the top
+	Sleep(3000)
+EndFunc
 
 Func PieTime()
     MouseClick("left",890,220) ;Click Event Hall
@@ -106,13 +114,13 @@ Func BossScroll()
  Func GuildBoss()
     MouseClick("left",655,555) ;Press Guild
 	Sleep(5000)
-	MouseClick("left",620,75) ;Press Guild Events
+	MouseClick("left",550,90) ;Press Guild Events
 	Sleep(5000)
-	MouseClick("left",940,470) ;Press Enter
+	MouseClick("left",965,490) ;Press Enter
 	Sleep(1000)
-	MouseClick("left",930,520) ;Press Challenge
+	MouseClick("left",930,520) ;Press Challenge####
 	Sleep(4000)
-	MouseClick("left",665,400) ;Press Cancel if the CD is not done
+	MouseClick("left",665,400) ;Press Cancel if the CD is not done####
 	Sleep(1000)
 	MouseClick("left",1000,550) ;Skip button
 	Sleep(4000)
