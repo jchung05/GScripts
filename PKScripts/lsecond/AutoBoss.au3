@@ -41,40 +41,41 @@ EndFunc
 Func TowerTraverse()
    ;Click Boss button
 	MouseClick("left",910,120)
-    Sleep(2000)
+    Sleep(3000)
    ;Click Event Tower
     MouseClick("left",215,75)
-    Sleep(4000)
+    Sleep(5000)
+   ;Click Limited Enter button
+    MouseClick("left",625,545)
+	Sleep(500)
    ;Click Regular Enter button
     MouseClick("left",625,330)
-   ;Click Limited Enter button
-    ;MouseClick("left",625,545)
-    Sleep(1000)
+    Sleep(2000)
    ;Drag bottom to top to scroll floor select down
     MouseClickDrag("left",335,460,335,155)
    ;Click bottom-most position
     MouseClick("left",335,460)
-    Sleep(1000)
+    Sleep(2000)
 
    ;Click Fight
     MouseClick("left",785,490)
-    Sleep(1000)
+    Sleep(2000)
    ;Click Auto-play
     MouseClick("left",905,75)
-    Sleep(1000)
+    Sleep(2000)
    ;Click Start
     MouseClick("left",810,540)
-    Sleep( 240000 )
+    Sleep( 230000 )
    ;Click End
     MouseClick("left",560,510)
    ;Click Exit twice
     MouseClick("left",1050,78)
-	Sleep(1000)
+	Sleep(2000)
     MouseClick("left",1050,78)
-    Sleep(1000)
+    Sleep(2000)
    ;Click Boss Battle
     MouseClick("left",435,80)
-    Sleep(1000) ;9 seconds total
+    Sleep(2000) ;9 seconds total
 
 EndFunc
 
