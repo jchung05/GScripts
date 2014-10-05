@@ -11,7 +11,7 @@ Sleep(1000)
 While 1 ;Infinite loop
     TowerTraverse() ;9 seconds
  	BossScroll() ;Unknown amount of time
-	;GuildBoss() ;20 seconds @@@@@@@@@@@@DOESN'T WORK
+	GuildBoss() ;20 seconds
 	;Sleep(1730000) ;Subtract the current action time. Sum >= 1800 seconds
 WEnd
 
@@ -113,17 +113,17 @@ Func BossScroll()
 
  ;20 seconds
  Func GuildBoss()
-    MouseClick("left",655,555) ;Press Guild
+    MouseClick("left",660,555) ;Press Guild
 	Sleep(5000)
-	MouseClick("left",550,90) ;Press Guild Events
+	MouseClick("left",550,85) ;Press Guild Events
 	Sleep(5000)
 	MouseClick("left",965,490) ;Press Enter
 	Sleep(1000)
-	MouseClick("left",930,520) ;Press Challenge####
+	MouseClick("left",930,540) ;Press Challenge
 	Sleep(4000)
-	MouseClick("left",665,400) ;Press Cancel if the CD is not done####
+	MouseClick("left",650,415) ;Press Cancel if the CD is not done
 	Sleep(1000)
-	MouseClick("left",1000,550) ;Skip button
+	MouseClick("left",1019,550) ;Skip button
 	Sleep(4000)
 	MouseClick("left",400,485) ;Confirm button
 	Sleep(2000)

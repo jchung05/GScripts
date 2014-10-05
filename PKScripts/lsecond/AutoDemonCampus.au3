@@ -6,128 +6,66 @@ Global $Paused
 
 Global $num = 0 ;Global itr
 
-;Please make sure you have plenty of space and equipment inventory
-MouseClick("left",) ;Open the World Map
+;Please make sure you have 200 Action Points or this will fail
+MouseClickDrag("left",170,395,750,395) ;Open the World Map
 Sleep(3000)
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",40,527) ;Press More button on Map 3
-Sleep(1000)
-Sleep(5000)
-MouseClickDrag("left",50,300,1000,300) ;Swipe Map 1 to the left-most side
+MouseClick("left",115,340) ;Click Demon Campus
 Sleep(3000)
+MouseClickDrag("left",50,330,1019,330)
+Sleep(1000)
 
-MouseClick("left",270,165) ;Castor Port
+MouseClick("left",555,430) ;Military Camp
 Sleep(3000)
-Castor()
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",330,385) ;The Lakebed
+ModFourDungeon()
+MouseClick("left",340,360) ;Mire
 Sleep(3000)
-Lakebed()
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",540,250) ;Magic Forest
+ModFourDungeon()
+MouseClick("left",350,240) ;Wasteland
 Sleep(3000)
-Forest()
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",720,440) ;Cloud City
+ModFourDungeon()
+MouseClick("left",595,250) ;Worksite
 Sleep(3000)
-StandardDungeon()
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",680,320) ;Wastelands
+ModFourDungeon()
+MouseClick("left",790,230) ;Monument
 Sleep(3000)
-StandardDungeon()
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",760,360) ;Desert
+ModFourDungeon()
+MouseClick("left",840,145) ;Flatlands
 Sleep(3000)
-StandardDungeon()
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",750,145) ;Snowberg Mountain
+ModFourDungeon()
+MouseClick("left",370,350) ;Stronghold
 Sleep(3000)
-StandardDungeon()
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",690,320) ;Winter Cave
+ModFourDungeon()
+MouseClick("left",780,320) ;Trail
 Sleep(3000)
-StandardDungeon()
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",790,410) ;Lost City
+ModFourDungeon()
+MouseClick("left",750,370) ;Big Bridge
 Sleep(3000)
-StandardDungeon()
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",930,155) ;Floating Island
+ModFourDungeon()
+MouseClick("left",935,200) ;Mountain
 Sleep(3000)
-StandardDungeon()
-MouseClick("left",40,527)
-;MouseClick("left",990,505) ;Press More button on Map 1
+ModFourDungeon()
 Sleep(5000)
-
-MouseClickDrag("left",50,300,1000,300) ;Swipe Map 2 to the left-most side
-Sleep(3000)
-MouseClick("left",315,350) ;Whirlwreck
-Sleep(3000)
-StandardDungeon()
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",555,310) ;Yggdras
-Sleep(3000)
-StandardDungeon()
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",690,205) ;Ruins
-Sleep(3000)
-StandardDungeon()
-MouseClick("left",40,527)
-Sleep(1000)
-MouseClick("left",860,210) ;Dire Keep
-Sleep(3000)
-StandardDungeon()
 
 MouseClick("left",100,120) ;Return to Main
 Sleep(5000)
 Exit(1)
 
 ;16%4 = 0 count Dungeons
-Func ModFourDungeon();############################
+Func ModFourDungeon()
     Sleep(1000)
-	FirstDungeon()
-	While $num < 16 ;Iterate n-1 times
-		MouseClick("left",400,480) ;Click sequential stage
+	FourthDungeon()
+	While $num < 4 ;Iterate n-1 times
+	    MouseClickDrag("left",890,480,660,480) ;Drag 1 stage across
 		Sleep(500)
-		MouseClick("left",400,540) ;Click sequential stage battle
+		MouseClick("left",890,500) ;Click sequential stage
 		Sleep(500)
-		MouseClick("left",680,520) ;Click Battle
+		MouseClick("left",890,555) ;Click sequential stage battle
 		Sleep(4000)
 		MouseClick("left",1000,550) ;Skip button
 		Sleep(2500)
-		MouseClick("left",1000,400) ;Just in case a Chest pop-up appears
-		Sleep(4000)
-		MouseClick("left",400,480) ;Confirm button
+		;MouseClick("left",1000,400) ;Just in case a Chest pop-up appears
+		;Sleep(4000)
+		MouseClick("left",400,500) ;Confirm button
 		Sleep(2500)
 		$num+=1 ;Iterate by one
 	WEnd
@@ -136,19 +74,22 @@ Func ModFourDungeon();############################
 	Sleep(4000)
 EndFunc
 
-Func FourthDungeon();###############################
-	MouseClick("left",420,60) ;Click Elite Dungeon
+Func FourthDungeon()
+    MouseClick("left",890,500) ;Click fourth stage
 	Sleep(500)
-	MouseClick("left",200,540) ;Click first stage battle
+	MouseClick("left",890,555) ;Click fourth stage battle
 	Sleep(4000)
-	MouseClick("left",680,520) ;Click Battle
-	Sleep(5000)
 	MouseClick("left",1000,550) ;Skip button
 	Sleep(2500)
-	MouseClick("left",1000,400) ;Just in case a Chest pop-up appears
-	Sleep(4000)
-	MouseClick("left",400,480) ;Confirm button
+	;MouseClick("left",1000,400) ;Just in case a Chest pop-up appears
+	;Sleep(4000)
+	MouseClick("left",400,500) ;Confirm button
 	Sleep(2500)
+EndFunc
+
+Func CollectGuild()
+	MouseClick("left",380,75) ;Click Elite Dungeon
+	Sleep(500)
 EndFunc
 
 Func Terminate()
