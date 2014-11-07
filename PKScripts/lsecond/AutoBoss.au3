@@ -6,12 +6,13 @@ Global $Paused
 
 ;Sleep(3000000)
 ;PieTime() ;One-time function call
-CloseTV() ;10 seconds
+;CloseTV() ;10 seconds
 Sleep(1000)
 While 1 ;Infinite loop
     TowerTraverse() ;9 seconds
  	BossScroll() ;Unknown amount of time
-	GuildBoss() ;20 seconds
+	;Sleep(310000)
+	;GuildBoss() ;20 seconds
 	;Sleep(1730000) ;Subtract the current action time. Sum >= 1800 seconds
 WEnd
 
@@ -40,53 +41,53 @@ EndFunc
 ;Make sure Tower Floor Limits are unchecked
 Func TowerTraverse()
    ;Click Boss button
-	MouseClick("left",910,120)
+	MouseClick("left",830,120)
     Sleep(3000)
    ;Click Event Tower
-    MouseClick("left",215,75)
+    MouseClick("left",135,75)
     Sleep(5000)
    ;Click Limited Enter button
-    MouseClick("left",625,545)
+    MouseClick("left",545,545)
 	Sleep(500)
    ;Click Regular Enter button
-    MouseClick("left",625,330)
+    MouseClick("left",545,330)
     Sleep(2000)
    ;Drag bottom to top to scroll floor select down
-    MouseClickDrag("left",335,460,335,155)
+    MouseClickDrag("left",255,460,255,155)
    ;Click bottom-most position
-    MouseClick("left",335,460)
+    MouseClick("left",255,460)
     Sleep(2000)
 
    ;Click Fight
-    MouseClick("left",785,490)
+    MouseClick("left",705,490)
     Sleep(2000)
    ;Click Auto-play
-    MouseClick("left",905,75)
+    MouseClick("left",825,75)
     Sleep(2000)
    ;Click Start
-    MouseClick("left",810,540)
+    MouseClick("left",730,540)
     Sleep( 230000 )
    ;Click End
-    MouseClick("left",560,510)
+    MouseClick("left",480,410)
    ;Click Exit twice
-    MouseClick("left",1050,78)
+    MouseClick("left",960,78)
 	Sleep(2000)
-    MouseClick("left",1050,78)
+    MouseClick("left",960,78)
     Sleep(2000)
    ;Click Boss Battle
-    MouseClick("left",435,80)
+    MouseClick("left",355,80)
     Sleep(2000) ;9 seconds total
 
 EndFunc
 
 Func BossScroll()
 
-	MouseClick("left",925,210) ;Press Enter/Attack
+	MouseClick("left",845,210) ;Press Enter/Attack
 	Sleep(1000)
 	AutoAttack()
-	MouseClick("left",1050,78) ;Close Announcements/Click Event button
+	MouseClick("left",970,78) ;Close Announcements/Click Event button
 	Sleep(3000)
-	MouseClick("left",1050,78) ;Close Announcements/Click Event button & reset the top
+	MouseClick("left",970,78) ;Close Announcements/Click Event button & reset the top
 	Sleep(3000)
  EndFunc
 
@@ -98,13 +99,13 @@ Func BossScroll()
 	   $timcount += 1
 	WEnd
 	Sleep(3000)
-	MouseClick("left",1035,570) ;Skip button
+	MouseClick("left",955,570) ;Skip button
 	Sleep(4000)
-	MouseClick("left",420,500) ;Confirm button
+	MouseClick("left",340,500) ;Confirm button
 	Sleep(2000)
 	$timcount = 0
 	While $timcount < 60
-	   MouseClick("left",820,560,50) ;Press Claim (if needed)
+	   MouseClick("left",740,560,50) ;Press Claim (if needed)
 	   Sleep(500)
 	   $timcount += 1
 	WEnd
@@ -113,23 +114,23 @@ Func BossScroll()
 
  ;20 seconds
  Func GuildBoss()
-    MouseClick("left",660,555) ;Press Guild
+    MouseClick("left",600,555) ;Press Guild
 	Sleep(5000)
-	MouseClick("left",550,85) ;Press Guild Events
+	MouseClick("left",490,85) ;Press Guild Events
 	Sleep(5000)
-	MouseClick("left",965,490) ;Press Enter
+	MouseClick("left",905,490) ;Press Enter
 	Sleep(1000)
-	MouseClick("left",930,540) ;Press Challenge
+	MouseClick("left",870,540) ;Press Challenge
 	Sleep(4000)
-	MouseClick("left",650,415) ;Press Cancel if the CD is not done
+	MouseClick("left",590,415) ;Press Cancel if the CD is not done
 	Sleep(1000)
-	MouseClick("left",1019,550) ;Skip button
+	MouseClick("left",959,550) ;Skip button
 	Sleep(4000)
-	MouseClick("left",400,485) ;Confirm button
+	MouseClick("left",340,485) ;Confirm button
 	Sleep(2000)
-	MouseClick("left",1050,78) ;Close Announcements
+	MouseClick("left",970,78) ;Close Announcements
 	Sleep(3000)
-	MouseClick("left",1050,78) ;Close Announcements
+	MouseClick("left",970,78) ;Close Announcements
 	Sleep(3000)
  EndFunc
 

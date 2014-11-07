@@ -48,7 +48,7 @@ Func TimesTwo()
 EndFunc
 
 Func TimesTen()
-   MouseClick("left",560,170) ;Labyrinth Button
+   MouseClick("left",565,170) ;Labyrinth Button
    Sleep(1000)
    MouseClick("left",945,125) ;x10 Button
    Sleep(1000)
