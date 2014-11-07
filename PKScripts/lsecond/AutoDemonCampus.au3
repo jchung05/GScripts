@@ -75,7 +75,7 @@ Func ModFourDungeon()
 		MouseClick("left",800,500) ;Click sequential stage
 		Sleep(500)
 		MouseClick("left",800,555) ;Click sequential stage battle
-		Sleep(4000)
+		Sleep(7000)
 	    MouseClick("left",955,570) ;Skip button
 		Sleep(2500)
 		MouseClick("left",340,500) ;Confirm button
@@ -91,7 +91,7 @@ Func FourthDungeon()
     MouseClick("left",800,500) ;Click fourth stage
 	Sleep(500)
 	MouseClick("left",800,555) ;Click fourth stage battle
-	Sleep(4000)
+	Sleep(7000)
     MouseClick("left",955,570) ;Skip button
 	Sleep(2500)
     MouseClick("left",340,500) ;Confirm button
