@@ -6,10 +6,8 @@ Global $Paused
 
 Global $num = 0 ;Global itr
 
-;Please make sure you have 200 Action Points or this will fail
-MouseClickDrag("left",170,395,750,395) ;Open the World Map
-Sleep(3000)
-MouseClick("left",110,340) ;Click Demon Campus
+;Please make sure you have 300 Action Points or this will fail
+MouseClick("left",40,335) ;Click Demon Campus
 Sleep(3000)
 MouseClick("left",120,535) ;Press More to return to map 1
 Sleep(2000)
@@ -18,121 +16,151 @@ Sleep(1000)
 
 MouseClick("left",505,430) ;Military Camp
 Sleep(3000)
-;ModFourDungeon()
-StandardDungeon()
+CollectGuild()
 MouseClick("left",300,360) ;Mire
 Sleep(3000)
-;ModFourDungeon()
-StandardDungeon()
+CollectGuild()
 MouseClick("left",320,240) ;Wasteland
 Sleep(3000)
-;ModFourDungeon()
-StandardDungeon()
+CollectGuild()
 MouseClick("left",530,250) ;Worksite
 Sleep(3000)
-;ModFourDungeon()
-StandardDungeon()
+CollectGuild()
 MouseClick("left",715,230) ;Monument
 Sleep(3000)
-;ModFourDungeon()
-StandardDungeon()
+CollectGuild()
 MouseClick("left",760,145) ;Flatlands
 Sleep(3000)
-;ModFourDungeon()
-StandardDungeon()
+CollectGuild()
 MouseClick("left",335,350) ;Stronghold
 Sleep(3000)
-;ModFourDungeon()
-StandardDungeon()
+CollectGuild()
 MouseClick("left",705,320) ;Trail
 Sleep(3000)
-;ModFourDungeon()
-StandardDungeon()
+CollectGuild()
 MouseClick("left",680,370) ;Big Bridge
 Sleep(3000)
-;ModFourDungeon()
-StandardDungeon()
+CollectGuild()
 MouseClick("left",840,200) ;Mountain
 Sleep(3000)
-;ModFourDungeon()
-StandardDungeon()
+CollectGuild()
 
+Sleep(1000)
 MouseClick("left",905,530) ;Press More to return to map 2
+MouseClickDrag("left",50,330,1019,330)
+Sleep(1000)
 
-Sleep(5000)
+MouseClick("left",500,510) ;Demon Crystal Mine
+Sleep(1000)
+MouseClick("left",140,470) ;CHANGE THIS TO YOUR GUILD MINE
+MouseClick("left",655,570) ;Rewards
+MouseClick("left",945,80) ;Close
+
+MouseClick("left",265,470) ;Peak
+Sleep(3000)
+CollectGuild()
+MouseClick("left",210,270) ;Campground
+Sleep(3000)
+CollectGuild()
+MouseClick("left",445,315) ;Temple
+Sleep(3000)
+CollectGuild()
+MouseClick("left",650,195) ;Church
+Sleep(3000)
+CollectGuild()
+MouseClick("left",760,265) ;Tower of Death
+Sleep(3000)
+CollectGuild()
+MouseClick("left",705,225) ;Lake
+Sleep(3000)
+CollectGuild()
+MouseClick("left",760,170) ;Arena
+Sleep(3000)
+CollectGuild()
+MouseClick("left",830,330) ;The Wall
+Sleep(3000)
+CollectGuild()
+
+MouseClick("left",680,435) ;Castle of Green
+Sleep(3000)
+CollectGuild()
+MouseClick("left",365,505) ;Abyss
+Sleep(3000)
+CollectGuild()
+
+AutoDungeon()
+
+Sleep(180000)
+MouseClick("left",945,80) ;Close
+Sleep(500)
+MouseClick("left",945,80) ;Close
+Sleep(500)
 MouseClick("left",100,120) ;Return to Main
 Sleep(5000)
 Exit(1)
 
-;These coordinates no longer work because Windows 8.1 is fucking gay
-;16%4 = 0 count Dungeons
-Func ModFourDungeon()
-    Sleep(1000)
-	FourthDungeon()
-	While $num < 4 ;Iterate n-1 times
-	    MouseClickDrag("left",800,480,570,480) ;Drag 1 stage across
-		Sleep(500)
-		MouseClick("left",800,500) ;Click sequential stage
-		Sleep(500)
-		MouseClick("left",800,555) ;Click sequential stage battle
-		Sleep(7000)
-	    MouseClick("left",955,570) ;Skip button
-		Sleep(2500)
-		MouseClick("left",340,500) ;Confirm button
-		Sleep(2500)
-		$num+=1 ;Iterate by one
-	WEnd
-	$num = 0 ;Reset itr
-	MouseClick("left",970,78) ;Close the window
-	Sleep(4000)
-EndFunc
-
-Func FourthDungeon()
-    MouseClick("left",800,500) ;Click fourth stage
-	Sleep(500)
-	MouseClick("left",800,555) ;Click fourth stage battle
-	Sleep(7000)
-    MouseClick("left",955,570) ;Skip button
-	Sleep(2500)
-    MouseClick("left",340,500) ;Confirm button
-	Sleep(2500)
-EndFunc
-
-;16 count Dungeons
-Func StandardDungeon()
-    Sleep(1000)
-	FirstDungeon()
-	While $num < 16 ;Iterate n-1 times
-		MouseClick("left",400,480) ;Click sequential stage
-		Sleep(500)
-		MouseClick("left",400,565) ;Click Battle
-		Sleep(7000)
-	    MouseClick("left",955,570) ;Skip button
-	    Sleep(3000)
-	    MouseClick("left",340,500) ;Confirm button
-	    Sleep(2000)
-		$num+=1 ;Iterate by one
-	WEnd
-	$num = 0 ;Reset itr
-	MouseClick("left",970,78) ;Close the window
-	Sleep(4000)
-EndFunc
-
-Func FirstDungeon()
-	;MouseClick("left",420,60) ;Click Elite Dungeon
-	;Sleep(500)
-	MouseClick("left",205,500) ;Click first stage battle
-	Sleep(2000)
-	MouseClick("left",205,565) ;Click Battle
-	Sleep(7000)
-	MouseClick("left",955,570) ;Skip button
+Func AutoDungeon()
+    MouseClick("left",830,330) ;Click a dungeon (The Wall)
 	Sleep(3000)
-	MouseClick("left",340,500) ;Confirm button
-	Sleep(2000)
+	MouseClick("left",805,85) ;Click Auto-Play
+	Sleep(500)
+	FiveSetClick()
+	Sleep(500)
+	MouseClickDrag("left",145,481,145,250) ;Scroll
+	Sleep(500)
+	MouseClickDrag("left",145,307,145,250)
+	Sleep(500)
+	FiveSetClick()
+	MouseClickDrag("left",145,481,145,250) ;Scroll
+	Sleep(500)
+	MouseClickDrag("left",145,307,145,250)
+	Sleep(500)
+	FiveSetClick()
+	MouseClickDrag("left",145,481,145,250) ;Scroll
+	Sleep(500)
+	MouseClickDrag("left",145,307,145,250)
+	Sleep(500)
+	FiveSetClick()
+	MouseClick("left",720,570) ;Click Start Auto-Play
+EndFunc
+
+Func FiveSetClick()
+    MouseClick("left",145,250) ;Click first map
+	Sleep(500)
+	ModFourDungeon()
+	MouseClick("left",145,307) ;Click second map
+	Sleep(500)
+	ModFourDungeon()
+	MouseClick("left",145,365) ;Click third map
+	Sleep(500)
+	ModFourDungeon()
+	MouseClick("left",145,425) ;Click fourth map
+	Sleep(500)
+	ModFourDungeon()
+	MouseClick("left",145,481) ;Click fifth map
+	Sleep(500)
+	ModFourDungeon()
+EndFunc
+
+Func ModFourDungeon()
+	MouseClick("left",260,255) ;4
+	Sleep(250)
+	MouseClick("left",450,300) ;8
+	Sleep(250)
+	MouseClick("left",630,345) ;12
+	Sleep(250)
+	MouseClick("left",260,440) ;16
+	Sleep(250)
+	MouseClick("left",505,500) ;Click Add
+	Sleep(250)
 EndFunc
 
 Func CollectGuild()
-	MouseClick("left",380,75) ;Click Elite Dungeon
+	MouseClick("left",340,85) ;Click Elite Dungeon
+	Sleep(500)
+	MouseClick("left",765,80) ;Click Claim
+	Sleep(500)
+	MouseClick("left",945,80) ;Close
 	Sleep(500)
 EndFunc
 
