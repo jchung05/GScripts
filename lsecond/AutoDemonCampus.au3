@@ -97,7 +97,7 @@ MouseClick("left",945,80) ;Close
 Sleep(500)
 MouseClick("left",100,120) ;Return to Main
 Sleep(5000)
-Exit(1)
+Terminate()
 
 Func AutoDungeon()
     MouseClick("left",830,330) ;Click a dungeon (The Wall)
