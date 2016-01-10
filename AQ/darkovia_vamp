@@ -1,6 +1,32 @@
 #!/bin/bash
 
-while [ 1 ]; do
-  xdotool mousemove 664 337 click 1 &
-  sleep 4
-done
+delay=4
+
+#trap 'stty sane; exit' SIGINT SIGKILL SIGTERM
+
+#trap 'kill 0' EXIT	
+
+while true; do
+  sleep 3 #Alt-tab to window for time being
+
+  xdotool mousemove 681 376 click 1 & #Take the southern passage
+  sleep 1
+
+  xdotool mousemove 736 425 click 1 & #More
+  sleep 1
+  xdotool mousemove 715 377 click 1 & #More
+  sleep 5
+
+#  while $timer<16; do
+  for ((COUNTER=0; COUNTER<=15 ; COUNTER++))
+  do
+    xdotool mousemove 664 337 click 1 &
+    sleep "$delay"
+  done
+  sleep 5 #Wait for Next to appear
+
+  xdotool mousemove 677 561 click 1 & #Next
+  sleep 1
+  xdotool mousemove 677 561 click 1 & #Z-Tokens
+  sleep 2
+done &
