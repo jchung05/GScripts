@@ -1,4 +1,4 @@
-PKScripts
+GScripts
 =========
 
-Personal game play scripts
+Personal game play scripts for various games on computer
