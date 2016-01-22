@@ -1,8 +1,11 @@
 #!/bin/bash
+#Currently using kill $(ps -aux | grep "[d]arkovia_vamp" | awk '{print $2}') to kill the process manually
 
 delay=4
 
-#trap 'stty sane; exit' SIGINT SIGKILL SIGTERM
+trap 'echo "Starting script..."'
+
+#trap 'stty b; exit' SIGINT SIGKILL SIGTERM
 
 #trap 'kill 0' EXIT	
 
@@ -25,8 +28,13 @@ while true; do
   done
   sleep 5 #Wait for Next to appear
 
-  xdotool mousemove 677 561 click 1 & #Next
+  xdotool mousemove 677 561 click 1 #Next
   sleep 1
-  xdotool mousemove 677 561 click 1 & #Z-Tokens
+  xdotool mousemove 677 561 click 1 #Z-Tokens
+  sleep 1
+  xdotool mousemove 675 437 click 1 #Level-Up
   sleep 2
 done &
+
+#stty intr q #Press q to quit
+#exit 0
