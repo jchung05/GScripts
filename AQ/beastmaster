@@ -1,0 +1,61 @@
+#!/bin/bash
+#Currently using kill $(ps -aux | grep "[b]eastmaster" | awk '{print $2}') to kill the process manually
+
+delay=4
+
+trap 'echo "Starting script..."'
+
+#trap 'stty b; exit' SIGINT SIGKILL SIGTERM
+
+#trap 'kill 0' EXIT	
+
+while true; do
+  sleep 3 #Alt-tab to window for time being
+
+  xdotool mousemove 690 400 click 1 & #Continue
+  sleep 2
+
+  xdotool mousemove 850 590 click 1 & #More
+  sleep 2
+  xdotool mousemove 850 590 click 1 & #More
+  sleep 2
+  xdotool mousemove 955 437 click 1 & #More
+  sleep 2
+  xdotool mousemove 850 590 click 1 & #Fight!
+  sleep 5
+
+#  while $timer<200; do
+  for ((COUNTER=0; COUNTER<=50; COUNTER++))
+  do
+    xdotool mousemove 664 337 click 1 &
+    sleep "$delay"
+  done
+  sleep 5 #Wait for Next to appear
+
+  xdotool mousemove 677 561 click 1 #Next
+  sleep 1
+  xdotool mousemove 677 561 click 1 #Z-Tokens
+  sleep 1
+  xdotool mousemove 675 437 click 1 #Level-Up
+  sleep 2
+
+  xdotool mousemove 770 540 click 1 #Victory!
+  sleep 2
+  xdotool mousemove 855 590 click 1 #More
+  sleep 2
+  xdotool mousemove 935 465 click 1 #More
+  sleep 2
+  xdotool mousemove 935 465 click 1 #More
+  sleep 2
+  xdotool mousemove 760 555 click 1 #More
+  sleep 2
+  xdotool mousemove 900 445 click 1 #More
+  sleep 2
+  xdotool mousemove 775 545 click 1 #Yay!
+  sleep 2
+  xdotool mousemove 930 540 click 1 #Battle Tyrant King Again
+  sleep 5
+done &
+
+#stty intr q #Press q to quit
+#exit 0
