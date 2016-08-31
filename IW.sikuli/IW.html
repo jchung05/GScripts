@@ -1,0 +1,111 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>IW.sikuli</h2> <a href="IW.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="cmt">#Press Shift+Alt+C to escape</span>
+<span class="kw">while</span> True:
+    <span class="cmt">#Look for new co-ops</span>
+    <span class="kw">if</span>(Region(<span class="dig">441</span>,<span class="dig">400</span>,<span class="dig">81</span>,<span class="dig">76</span>).exists(Pattern(<img src="NewComboCoOp.png" />).similar(<span class="dig">0.80</span>))):
+        <span class="skw">wait</span>(<span class="dig">.1</span>)
+        Region(<span class="dig">441</span>,<span class="dig">400</span>,<span class="dig">81</span>,<span class="dig">76</span>).<span class="skw">click</span>(<img src="NewComboCoOp.png" />)
+        <span class="kw">if</span>(Region(<span class="dig">595</span>,<span class="dig">325</span>,<span class="dig">246</span>,<span class="dig">362</span>).exists(Pattern(<img src="New.png" />).similar(<span class="dig">0.95</span>))):
+            newText = <span class="skw">find</span>(Pattern(<img src="New.png" />).similar(<span class="dig">0.95</span>))
+            newRegion = Region(newText.getX(),newText.getY(),<span class="dig">220</span>,<span class="dig">155</span>)
+            newRegion.<span class="skw">click</span>(<img src="GoHelp.png" />)
+            <span class="kw">if</span>(Region(<span class="dig">597</span>,<span class="dig">561</span>,<span class="dig">237</span>,<span class="dig">98</span>).exists(<img src="Persuade.png" />)):
+                Region(<span class="dig">597</span>,<span class="dig">561</span>,<span class="dig">237</span>,<span class="dig">98</span>).<span class="skw">click</span>(<img src="Persuade.png" />)
+                <span class="skw">wait</span>(<span class="dig">3</span>)
+                <span class="kw">if</span>(Region(<span class="dig">897</span>,<span class="dig">252</span>,<span class="dig">126</span>,<span class="dig">84</span>).exists(Pattern(<img src="SKIP.png" />).similar(<span class="dig">0.50</span>))):
+                    Region(<span class="dig">897</span>,<span class="dig">252</span>,<span class="dig">126</span>,<span class="dig">84</span>).<span class="skw">click</span>(Pattern(<img src="SKIP.png" />).similar(<span class="dig">0.50</span>))
+        <span class="skw">wait</span>(<span class="dig">2</span>)
+        Region(<span class="dig">310</span>,<span class="dig">142</span>,<span class="dig">107</span>,<span class="dig">98</span>).<span class="skw">click</span>(Pattern(<img src="MyPage.png" />).similar(<span class="dig">0.90</span>))
+        <span class="skw">wait</span>(<span class="dig">2</span>)
+    <span class="cmt">#Go like a gacha and come back</span>
+    <span class="kw">else</span>:
+        <span class="skw">wait</span>(<span class="dig">.1</span>)
+        hover(Location(<span class="dig">570</span>,<span class="dig">185</span>))
+        <span class="kw">if</span>(Region(<span class="dig">510</span>,<span class="dig">226</span>,<span class="dig">111</span>,<span class="dig">90</span>).exists(<img src="MainGacha.png" />)):
+            <span class="skw">click</span>(<img src="MainGacha.png" />)
+        <span class="kw">else</span>:
+            Region(<span class="dig">325</span>,<span class="dig">234</span>,<span class="dig">62</span>,<span class="dig">61</span>).<span class="skw">click</span>(<img src="SideGacha.png" />)
+        <span class="skw">wait</span>(<span class="dig">5</span>)
+        Region(<span class="dig">547</span>,<span class="dig">310</span>,<span class="dig">228</span>,<span class="dig">220</span>).onVanish(Pattern(<img src="Connecting.png" />).similar(<span class="dig">0.85</span>),<span class="skw">wait</span>(<span class="dig">.1</span>))
+        <span class="skw">dragDrop</span>(Location(<span class="dig">995</span>,<span class="dig">340</span>),Location(<span class="dig">995</span>,<span class="dig">515</span>))
+        <span class="skw">wait</span>(<span class="dig">.5</span>)
+        <span class="kw">if</span>(Region(<span class="dig">850</span>,<span class="dig">334</span>,<span class="dig">156</span>,<span class="dig">126</span>).exists(<img src="Like.png" />)):
+            <span class="skw">click</span>(<img src="Like.png" />)
+        <span class="skw">wait</span>(<span class="dig">2</span>)
+        Region(<span class="dig">547</span>,<span class="dig">310</span>,<span class="dig">228</span>,<span class="dig">220</span>).onVanish(Pattern(<img src="Connecting.png" />).similar(<span class="dig">0.85</span>))
+        Region(<span class="dig">310</span>,<span class="dig">142</span>,<span class="dig">107</span>,<span class="dig">98</span>).<span class="skw">click</span>(Pattern(<img src="MyPage.png" />).similar(<span class="dig">0.90</span>))
+        <span class="skw">wait</span>(<span class="dig">1</span>)
+</pre>
+</body>
+</html>
