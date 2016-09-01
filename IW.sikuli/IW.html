@@ -72,6 +72,12 @@
 <pre class="sikuli-code">
 <span class="cmt">#Press Shift+Alt+C to escape</span>
 <span class="kw">while</span> True:
+    <span class="kw">if</span>(Region(<span class="dig">817</span>,<span class="dig">520</span>,<span class="dig">233</span>,<span class="dig">198</span>).exists(Pattern(<img src="Error.png" />).similar(<span class="dig">0.80</span>)) <span class="kw">or</span> Region(<span class="dig">754</span>,<span class="dig">439</span>,<span class="dig">381</span>,<span class="dig">276</span>).exists(<img src="Error2.png" />)):
+        <span class="skw">type</span>(Key.F5)
+        <span class="skw">wait</span>(<span class="dig">10</span>)
+        <span class="kw">if</span>(Region(<span class="dig">513</span>,<span class="dig">595</span>,<span class="dig">328</span>,<span class="dig">120</span>).exists(<img src="StartName.png" />)):
+            <span class="skw">click</span>(<img src="StartName.png" />)
+            <span class="skw">wait</span>(<span class="dig">5</span>)
     <span class="cmt">#Look for new co-ops</span>
     <span class="kw">if</span>(Region(<span class="dig">441</span>,<span class="dig">400</span>,<span class="dig">81</span>,<span class="dig">76</span>).exists(Pattern(<img src="NewComboCoOp.png" />).similar(<span class="dig">0.80</span>))):
         <span class="skw">wait</span>(<span class="dig">.1</span>)
@@ -80,19 +86,14 @@
             newText = <span class="skw">find</span>(Pattern(<img src="New.png" />).similar(<span class="dig">0.95</span>))
             newRegion = Region(newText.getX(),newText.getY(),<span class="dig">220</span>,<span class="dig">155</span>)
             <span class="cmt">#Need to make an escape case here</span>
-            newRegion.<span class="skw">click</span>(<img src="GoHelp.png" />)
-            <span class="kw">if</span>(Region(<span class="dig">597</span>,<span class="dig">561</span>,<span class="dig">237</span>,<span class="dig">98</span>).exists(<img src="Persuade.png" />)):
-                Region(<span class="dig">597</span>,<span class="dig">561</span>,<span class="dig">237</span>,<span class="dig">98</span>).<span class="skw">click</span>(<img src="Persuade.png" />)
-                <span class="skw">wait</span>(<span class="dig">3</span>)
-                <span class="kw">if</span>(Region(<span class="dig">897</span>,<span class="dig">252</span>,<span class="dig">126</span>,<span class="dig">84</span>).exists(Pattern(<img src="SKIP.png" />).similar(<span class="dig">0.50</span>))):
-                    Region(<span class="dig">897</span>,<span class="dig">252</span>,<span class="dig">126</span>,<span class="dig">84</span>).<span class="skw">click</span>(Pattern(<img src="SKIP.png" />).similar(<span class="dig">0.50</span>))
-                <span class="kw">else</span>:
-                    <span class="kw">continue</span>
-            <span class="kw">else</span>:
-                <span class="kw">continue</span>
-        <span class="kw">else</span>:
-            <span class="kw">continue</span>
-        <span class="skw">wait</span>(<span class="dig">2</span>)
+            <span class="kw">if</span>(newRegion.exists(<img src="GoHelp.png" />)):
+                newRegion.<span class="skw">click</span>(<img src="GoHelp.png" />)
+                <span class="kw">if</span>(Region(<span class="dig">597</span>,<span class="dig">561</span>,<span class="dig">237</span>,<span class="dig">98</span>).exists(<img src="Persuade.png" />)):
+                    Region(<span class="dig">597</span>,<span class="dig">561</span>,<span class="dig">237</span>,<span class="dig">98</span>).<span class="skw">click</span>(<img src="Persuade.png" />)
+                    <span class="skw">wait</span>(<span class="dig">3</span>)
+                    <span class="kw">if</span>(Region(<span class="dig">897</span>,<span class="dig">252</span>,<span class="dig">126</span>,<span class="dig">84</span>).exists(Pattern(<img src="SKIP.png" />).similar(<span class="dig">0.50</span>))):
+                        Region(<span class="dig">897</span>,<span class="dig">252</span>,<span class="dig">126</span>,<span class="dig">84</span>).<span class="skw">click</span>(Pattern(<img src="SKIP.png" />).similar(<span class="dig">0.50</span>))
+            <span class="skw">wait</span>(<span class="dig">2</span>)
         Region(<span class="dig">310</span>,<span class="dig">142</span>,<span class="dig">107</span>,<span class="dig">98</span>).<span class="skw">click</span>(Pattern(<img src="MyPage.png" />).similar(<span class="dig">0.90</span>))
         <span class="skw">wait</span>(<span class="dig">2</span>)
     <span class="cmt">#Go like a gacha and come back</span>
