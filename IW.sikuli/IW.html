@@ -77,42 +77,42 @@
         <span class="skw">wait</span>(<span class="dig">10</span>)
         <span class="kw">if</span>(Region(<span class="dig">513</span>,<span class="dig">595</span>,<span class="dig">328</span>,<span class="dig">120</span>).exists(<img src="StartName.png" />)):
             <span class="skw">click</span>(<img src="StartName.png" />)
+            <span class="skw">click</span>(<img src="StartName.png" />)
             <span class="skw">wait</span>(<span class="dig">5</span>)
     <span class="cmt">#Look for new co-ops</span>
-    <span class="kw">if</span>(Region(<span class="dig">441</span>,<span class="dig">400</span>,<span class="dig">81</span>,<span class="dig">76</span>).exists(Pattern(<img src="NewComboCoOp.png" />).similar(<span class="dig">0.80</span>))):
-        <span class="skw">wait</span>(<span class="dig">.1</span>)
+    <span class="kw">if</span>(Region(<span class="dig">441</span>,<span class="dig">400</span>,<span class="dig">81</span>,<span class="dig">76</span>).exists(Pattern(<img src="NewComboCoOp.png" />).similar(<span class="dig">0.80</span>),<span class="dig">2</span>)):
         Region(<span class="dig">441</span>,<span class="dig">400</span>,<span class="dig">81</span>,<span class="dig">76</span>).<span class="skw">click</span>(<img src="NewComboCoOp.png" />)
         <span class="kw">if</span>(Region(<span class="dig">595</span>,<span class="dig">325</span>,<span class="dig">246</span>,<span class="dig">362</span>).exists(Pattern(<img src="New.png" />).similar(<span class="dig">0.95</span>))):
             newText = <span class="skw">find</span>(Pattern(<img src="New.png" />).similar(<span class="dig">0.95</span>))
             newRegion = Region(newText.getX(),newText.getY(),<span class="dig">220</span>,<span class="dig">155</span>)
             <span class="cmt">#Need to make an escape case here</span>
-            <span class="kw">if</span>(newRegion.exists(<img src="GoHelp.png" />)):
+            <span class="kw">if</span>(newRegion.exists(<img src="GoHelp.png" />),<span class="dig">2</span>):
                 newRegion.<span class="skw">click</span>(<img src="GoHelp.png" />)
-                <span class="kw">if</span>(Region(<span class="dig">597</span>,<span class="dig">561</span>,<span class="dig">237</span>,<span class="dig">98</span>).exists(<img src="Persuade.png" />)):
-                    Region(<span class="dig">597</span>,<span class="dig">561</span>,<span class="dig">237</span>,<span class="dig">98</span>).<span class="skw">click</span>(<img src="Persuade.png" />)
-                    <span class="skw">wait</span>(<span class="dig">3</span>)
-                    <span class="kw">if</span>(Region(<span class="dig">897</span>,<span class="dig">252</span>,<span class="dig">126</span>,<span class="dig">84</span>).exists(Pattern(<img src="SKIP.png" />).similar(<span class="dig">0.50</span>))):
-                        Region(<span class="dig">897</span>,<span class="dig">252</span>,<span class="dig">126</span>,<span class="dig">84</span>).<span class="skw">click</span>(Pattern(<img src="SKIP.png" />).similar(<span class="dig">0.50</span>))
+                <span class="kw">if</span>(Region(<span class="dig">597</span>,<span class="dig">561</span>,<span class="dig">237</span>,<span class="dig">98</span>).exists(<img src="Persuade.png" />),<span class="dig">2</span>):
+                    <span class="skw">click</span>(<img src="Persuade.png" />)
+                    <span class="kw">if</span>(Region(<span class="dig">897</span>,<span class="dig">252</span>,<span class="dig">126</span>,<span class="dig">84</span>).exists(Pattern(<img src="SKIP.png" />).similar(<span class="dig">0.50</span>)),<span class="dig">3</span>):
+                        <span class="skw">click</span>(Pattern(<img src="SKIP.png" />).similar(<span class="dig">0.50</span>))
             <span class="skw">wait</span>(<span class="dig">2</span>)
-        Region(<span class="dig">310</span>,<span class="dig">142</span>,<span class="dig">107</span>,<span class="dig">98</span>).<span class="skw">click</span>(Pattern(<img src="MyPage.png" />).similar(<span class="dig">0.90</span>))
-        <span class="skw">wait</span>(<span class="dig">2</span>)
+        <span class="kw">if</span>(Region(<span class="dig">310</span>,<span class="dig">142</span>,<span class="dig">107</span>,<span class="dig">98</span>).exists(Pattern(<img src="MyPage.png" />).similar(<span class="dig">0.90</span>),<span class="dig">2</span>)):
+                <span class="skw">click</span>(Pattern(<img src="MyPage.png" />).similar(<span class="dig">0.90</span>))
+                <span class="skw">wait</span>(<span class="dig">2</span>)
     <span class="cmt">#Go like a gacha and come back</span>
     <span class="kw">else</span>:
         <span class="skw">wait</span>(<span class="dig">.1</span>)
         hover(Location(<span class="dig">570</span>,<span class="dig">185</span>))
-        <span class="kw">if</span>(Region(<span class="dig">510</span>,<span class="dig">226</span>,<span class="dig">111</span>,<span class="dig">90</span>).exists(<img src="MainGacha.png" />)):
+        <span class="kw">if</span>(Region(<span class="dig">510</span>,<span class="dig">226</span>,<span class="dig">111</span>,<span class="dig">90</span>).exists(<img src="MainGacha.png" />,<span class="dig">2</span>)):
             <span class="skw">click</span>(<img src="MainGacha.png" />)
-        <span class="kw">else</span>:
-            Region(<span class="dig">325</span>,<span class="dig">234</span>,<span class="dig">62</span>,<span class="dig">61</span>).<span class="skw">click</span>(<img src="SideGacha.png" />)
-        <span class="skw">wait</span>(<span class="dig">5</span>)
-        Region(<span class="dig">547</span>,<span class="dig">310</span>,<span class="dig">228</span>,<span class="dig">220</span>).onVanish(Pattern(<img src="Connecting.png" />).similar(<span class="dig">0.85</span>),<span class="skw">wait</span>(<span class="dig">.1</span>))
-        <span class="skw">dragDrop</span>(Location(<span class="dig">995</span>,<span class="dig">340</span>),Location(<span class="dig">995</span>,<span class="dig">515</span>))
+        <span class="kw">elif</span>(Region(<span class="dig">325</span>,<span class="dig">234</span>,<span class="dig">62</span>,<span class="dig">61</span>).exists(<img src="SideGacha.png" />,<span class="dig">2</span>)):
+            <span class="skw">click</span>(<img src="SideGacha.png" />)
         <span class="skw">wait</span>(<span class="dig">2</span>)
-        <span class="kw">if</span>(Region(<span class="dig">850</span>,<span class="dig">334</span>,<span class="dig">156</span>,<span class="dig">126</span>).exists(<img src="Like.png" />)):
-            <span class="skw">click</span>(<img src="Like.png" />)
-        <span class="skw">wait</span>(<span class="dig">2</span>)
-        Region(<span class="dig">547</span>,<span class="dig">310</span>,<span class="dig">228</span>,<span class="dig">220</span>).onVanish(Pattern(<img src="Connecting.png" />).similar(<span class="dig">0.85</span>))
-        Region(<span class="dig">310</span>,<span class="dig">142</span>,<span class="dig">107</span>,<span class="dig">98</span>).<span class="skw">click</span>(Pattern(<img src="MyPage.png" />).similar(<span class="dig">0.90</span>))
+        <span class="kw">if</span>(Region(<span class="dig">416</span>,<span class="dig">230</span>,<span class="dig">92</span>,<span class="dig">36</span>).exists(<img src="GachaText.png" />,<span class="dig">20</span>)):
+            <span class="skw">wait</span>(<span class="dig">2</span>)
+            <span class="skw">dragDrop</span>(Location(<span class="dig">995</span>,<span class="dig">340</span>),Location(<span class="dig">995</span>,<span class="dig">515</span>))
+            <span class="kw">if</span>(Region(<span class="dig">850</span>,<span class="dig">334</span>,<span class="dig">156</span>,<span class="dig">126</span>).exists(Pattern(<img src="Like.png" />).similar(<span class="dig">0.50</span>),<span class="dig">2</span>)):
+                <span class="skw">click</span>(Pattern(<img src="Like.png" />).similar(<span class="dig">0.50</span>))
+                <span class="skw">wait</span>(<span class="dig">2</span>)
+        <span class="kw">if</span>(Region(<span class="dig">310</span>,<span class="dig">142</span>,<span class="dig">107</span>,<span class="dig">98</span>).exists(Pattern(<img src="MyPage.png" />).similar(<span class="dig">0.98</span>),<span class="dig">5</span>)):
+            <span class="skw">click</span>(Pattern(<img src="MyPage.png" />).similar(<span class="dig">0.90</span>))
         <span class="skw">wait</span>(<span class="dig">1</span>)
 </pre>
 </body>
