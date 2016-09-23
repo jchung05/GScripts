@@ -1,12 +1,20 @@
-#Press Shift+Alt+C to escape
-while True:
-    if(Region(817,520,233,198).exists(Pattern("Error.png").similar(0.80)) or Region(754,439,381,276).exists("Error2.png")):
+def checkGame():
+   if(Region(817,520,233,198).exists(Pattern("Error.png").similar(0.80)) or Region(754,439,381,276).exists("Error2.png")):
         type(Key.F5)
         wait(10)
         if(Region(513,595,328,120).exists("StartName.png")):
             click("StartName.png")
             click("StartName.png")
-            wait(5)            
+            wait(5)       
+
+def clickMyPage():
+    if(Region(310,142,107,98).exists(Pattern("MyPage.png").similar(0.90),5)):
+            Region(310,142,107,98).click(Pattern("MyPage.png").similar(0.90))
+            wait(2)
+    
+#Press Shift+Alt+C to escape
+while True:
+    #checkGame()
     #Look for new co-ops
     if(Region(441,400,81,76).exists(Pattern("NewComboCoOp.png").similar(0.80),2)):
         Region(441,400,81,76).click("NewComboCoOp.png")
@@ -17,13 +25,11 @@ while True:
             if(newRegion.exists("GoHelp.png"),2):
                 newRegion.click("GoHelp.png")
                 if(Region(597,561,237,98).exists("Persuade.png"),2):
-                    click("Persuade.png")
+                    Region(597,561,237,98).click("Persuade.png")
                     if(Region(897,252,126,84).exists(Pattern("SKIP.png").similar(0.50)),3):
-                        click(Pattern("SKIP.png").similar(0.50))
-            wait(2)
-        if(Region(310,142,107,98).exists(Pattern("MyPage.png").similar(0.90),2)):
-                click(Pattern("MyPage.png").similar(0.90))
-                wait(2)
+                        Region(897,252,126,84).click(Pattern("SKIP.png").similar(0.50))
+                        wait(2)
+        clickMyPage()
     #Go like a gacha and come back
     else:
         wait(.1)
@@ -38,7 +44,6 @@ while True:
             dragDrop(Location(995,340),Location(995,515))
             if(Region(850,334,156,126).exists(Pattern("Like.png").similar(0.50),2)):
                 click(Pattern("Like.png").similar(0.50))
-                wait(2)
-        if(Region(310,142,107,98).exists(Pattern("MyPage.png").similar(0.98),5)):
-            click(Pattern("MyPage.png").similar(0.90))
+                wait(4)
+        clickMyPage()
         wait(1)
