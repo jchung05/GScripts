@@ -11,7 +11,8 @@ def clickMyPage():
     if(Region(310,142,107,98).exists(Pattern("MyPage.png").similar(0.90),5)):
             Region(310,142,107,98).click(Pattern("MyPage.png").similar(0.90))
             wait(2)
-    
+
+count = 0
 #Press Shift+Alt+C to escape
 while True:
     #checkGame()
@@ -22,11 +23,11 @@ while True:
             newText = find(Pattern("New.png").similar(0.95))
             newRegion = Region(newText.getX(),newText.getY(),220,155)
             #Need to make an escape case here
-            if(newRegion.exists("GoHelp.png"),2):
+            if(newRegion.exists("GoHelp.png")):
                 newRegion.click("GoHelp.png")
-                if(Region(597,561,237,98).exists("Persuade.png"),2):
+                if(Region(597,561,237,98).exists("Persuade.png")):
                     Region(597,561,237,98).click("Persuade.png")
-                    if(Region(897,252,126,84).exists(Pattern("SKIP.png").similar(0.50)),3):
+                    if(Region(897,252,126,84).exists(Pattern("SKIP.png").similar(0.50))):
                         Region(897,252,126,84).click(Pattern("SKIP.png").similar(0.50))
                         wait(2)
         clickMyPage()
@@ -41,9 +42,14 @@ while True:
         wait(2)
         if(Region(416,230,92,36).exists("GachaText.png",20)):
             wait(2)
-            dragDrop(Location(995,340),Location(995,515))
-            if(Region(850,334,156,126).exists(Pattern("Like.png").similar(0.50),2)):
-                click(Pattern("Like.png").similar(0.50))
-                wait(4)
+            if(count == 3):
+                dragDrop(Location(995,340),Location(995,515))
+                if(Region(850,334,156,126).exists(Pattern("Like.png").similar(0.50),2)):
+                    click(Pattern("Like.png").similar(0.50))
+                    wait(4)
+                count = 0
+            else:
+                wait(1)
+                count += 1
         clickMyPage()
         wait(1)
