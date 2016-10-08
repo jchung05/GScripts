@@ -70,29 +70,59 @@
 <h2>LB.sikuli</h2> <a href="LB.zip">(Download this script)</a>
 </div>
 <pre class="sikuli-code">
-<span class="kw">def</span> replaceRinka():
-    <span class="cmt">#Replace Rinka with NSeira</span>
-    <span class="kw">return</span> -<span class="dig">1</span>
+<span class="kw">def</span> changeLine(arr):
+    changeX = <span class="dig">607</span>
+    changeY = <span class="dig">643</span>
+    <span class="kw">for</span> char <span class="kw">in</span> arr:
+        unitFormReg.<span class="skw">wait</span>(<img src="UnitFormation.png" />,<span class="dig">20</span>)
+        <span class="skw">click</span>(Location(changeX,changeY))
+        changeX += <span class="dig">109</span>
+        textReg.<span class="skw">wait</span>(<img src="ChangeIdols.png" />,<span class="dig">20</span>)
+        <span class="kw">if</span> selectReg.exists(char):
+            selectChar(char)
 
 <span class="kw">def</span> selectChar(img):
-    match = selectRegion.<span class="skw">find</span>(img)
-    miniRegion = Region(match.x,match.y,match.w,match.h+<span class="dig">40</span>)
-    <span class="skw">wait</span>(<span class="dig">1</span>)
-    miniRegion.<span class="skw">click</span>(<img src="SmallChangeBtn.png" />)
-
-
-<span class="cmt">#"LargeChangeBtn.png""NSeira.png""Rinka.png"Pattern("DeleteBtn.png").similar(0.88)"FrontTab.png""RearTab.png""SmallChangeBtn.png"</span>
-front = [<img src="DivaMomona.png" />,<img src="SukuMomona.png" />,<img src="1475924352569.png" />,<img src="Fuka.png" />]
-rear = [<img src="Urara.png" />,<img src="Chiyo.png" />,<img src="Ryoko.png" />,<img src="Masumi.png" />]
-selectRegion = Region(<span class="dig">426</span>,<span class="dig">283</span>,<span class="dig">576</span>,<span class="dig">264</span>)
-<span class="kw">for</span> char <span class="kw">in</span> front:
     <span class="cmt">#Move the mouse away from the tooltips</span>
+    textReg.<span class="skw">wait</span>(<img src="ChangeIdols.png" />,<span class="dig">20</span>)
     hover(Location(<span class="dig">570</span>,<span class="dig">185</span>))
-    <span class="skw">wait</span>(<span class="dig">3</span>)
-<span class="cmt">#    hover(char)</span>
-    <span class="kw">if</span> selectRegion.exists(char):
-        selectChar(char)
-    <span class="skw">wait</span>(<span class="dig">3</span>)
+    match = selectReg.<span class="skw">find</span>(img)
+    miniReg = Region(match.x,match.y,match.w,match.h+<span class="dig">40</span>)
+    <span class="skw">wait</span>(<span class="dig">1</span>)
+    miniReg.<span class="skw">click</span>(<img src="SmallChangeBtn.png" />)
+
+<span class="kw">def</span> selectSlot():
+    <span class="cmt">#Deprecated to reduce computation power</span>
+    <span class="cmt">#changeLine() sequentially changes all units in a Line</span>
+    <span class="kw">return</span> -<span class="dig">1</span>
+
+<span class="kw">def</span> deleteRow():
+    deleteX = <span class="dig">626</span>
+    deleteY = <span class="dig">643</span>
+    <span class="kw">for</span> i <span class="kw">in</span> range(<span class="dig">4</span>):
+        unitFormReg.<span class="skw">wait</span>(<img src="UnitFormation.png" />,<span class="dig">20</span>)
+        <span class="skw">click</span>(Location(deleteX,deleteY))
+        deleteX += <span class="dig">109</span>
+        <span class="skw">wait</span>(<span class="dig">2</span>)
+
+<span class="kw">def</span> replaceRinka():
+    <span class="cmt">#Replace Rinka with NSeira</span>
+
+    <span class="cmt">#Go to Last section</span>
+    <span class="skw">click</span>(<span class="dig">769</span>,<span class="dig">672</span>)
+    selectChar(<img src="NSeira.png" />)
+
+<span class="kw">def</span> replaceNSeira():
+    <span class="cmt">#Replace NSeira with Rinka</span>
+    <span class="kw">return</span> -<span class="dig">1</span>
+<span class="cmt">#"LargeChangeBtn.png""Rinka.png"Pattern("DeleteBtn.png").similar(0.88)"FrontTab.png""RearTab.png""SmallChangeBtn.png""EmptySlot.png"</span>
+front = [<img src="DivaMomona.png" />,<img src="SukuMomona.png" />,<img src="Nanami.png" />,<img src="Fuka.png" />]
+rear = [<img src="Urara.png" />,<img src="Chiyo.png" />,<img src="Ryoko.png" />,<img src="Masumi.png" />]
+selectReg = Region(<span class="dig">426</span>,<span class="dig">283</span>,<span class="dig">576</span>,<span class="dig">264</span>)
+unitFormReg = Region(<span class="dig">415</span>,<span class="dig">434</span>,<span class="dig">136</span>,<span class="dig">38</span>)
+textReg = Region(<span class="dig">532</span>,<span class="dig">236</span>,<span class="dig">126</span>,<span class="dig">26</span>)
+
+deleteRow()
+changeLine(front)
 </pre>
 </body>
 </html>
