@@ -70,6 +70,22 @@
 <h2>LB.sikuli</h2> <a href="LB.zip">(Download this script)</a>
 </div>
 <pre class="sikuli-code">
+<span class="kw">def</span> frontMacro():
+    <span class="cmt">#Default start at front line</span>
+    deleteRow() <span class="cmt">#delete Front Line</span>
+    changeTab(<img src="RearTab.png" />) <span class="cmt">#switch tabs</span>
+    deleteRow() <span class="cmt">#delete Rear Line</span>
+    replaceRinka() <span class="cmt">#replace Rear Leader</span>
+    <span class="skw">sleep</span>(<span class="dig">20</span>) <span class="cmt">#Wait time to select opponents</span>
+
+<span class="kw">def</span> rearMacro():
+    <span class="cmt">#I may replace the preset wait times with an eternal wait on a key press</span>
+    replaceNSeira() <span class="cmt">#put Rear Leader back in</span>
+    changeRow(rear) <span class="cmt">#place all Rear Line back in</span>
+    changeTab(<img src="FrontTab.png" />) <span class="cmt">#switch tabs</span>
+    changeRow(front) <span class="cmt">#place all Front Line back in</span>
+    <span class="skw">sleep</span>(<span class="dig">30</span>) <span class="cmt">#Go fight!</span>
+
 <span class="kw">def</span> changeRow(arr):
     changeX = <span class="dig">607</span>
     changeY = <span class="dig">643</span>
@@ -128,28 +144,19 @@
     textReg.<span class="skw">wait</span>(<img src="ChangeIdols.png" />,<span class="dig">20</span>)
     <span class="kw">if</span> selectReg.exists(<img src="Rinka.png" />):
         selectChar(<img src="Rinka.png" />)
-<span class="cmt">#"LargeChangeBtn.png"Pattern("DeleteBtn.png").similar(0.88)"FrontTab.png""RearTab.png""SmallChangeBtn.png""EmptySlot.png"</span>
+<span class="cmt">#"LargeChangeBtn.png"Pattern("DeleteBtn.png").similar(0.88)"FrontTab.png""RearTab.png""SmallChangeBtn.png""EmptySlot.png""Nagisa.png"</span>
 
 front = [<img src="DivaMomona.png" />,<img src="SukuMomona.png" />,<img src="Nanami.png" />,<img src="Fuka.png" />]
-rear = [<img src="Urara.png" />,<img src="Chiyo.png" />,<img src="Ryoko.png" />,<img src="Masumi.png" />]
+rear = [<img src="Ryoko.png" />,<img src="Masumi.png" />,<img src="Urara.png" />,<img src="Chiyo.png" />]
 selectReg = Region(<span class="dig">390</span>,<span class="dig">330</span>,<span class="dig">679</span>,<span class="dig">372</span>)
 unitFormReg = Region(<span class="dig">415</span>,<span class="dig">434</span>,<span class="dig">136</span>,<span class="dig">38</span>)
 textReg = Region(<span class="dig">532</span>,<span class="dig">236</span>,<span class="dig">126</span>,<span class="dig">26</span>)
 lineReg = Region(<span class="dig">586</span>,<span class="dig">299</span>,<span class="dig">194</span>,<span class="dig">59</span>)
 
 <span class="kw">while</span>(<span class="dig">1</span>):
-    <span class="cmt">#Default start at front line</span>
-    deleteRow() <span class="cmt">#delete Front Line</span>
-    changeTab(<img src="RearTab.png" />) <span class="cmt">#switch tabs</span>
-    deleteRow() <span class="cmt">#delete Rear Line</span>
-    replaceRinka() <span class="cmt">#replace Rear Leader</span>
-    <span class="skw">sleep</span>(<span class="dig">20</span>) <span class="cmt">#Wait time to select opponents</span>
-    <span class="cmt">#I may replace the preset wait times with an eternal wait on a key press</span>
-    replaceNSeira() <span class="cmt">#put Rear Leader back in</span>
-    changeRow(rear) <span class="cmt">#place all Rear Line back in</span>
-    changeTab(<img src="FrontTab.png" />) <span class="cmt">#switch tabs</span>
-    changeRow(front) <span class="cmt">#place all Front Line back in</span>
-    <span class="skw">sleep</span>(<span class="dig">30</span>) <span class="cmt">#Go fight!</span>
+<span class="cmt">#    frontMacro()</span>
+    rearMacro()
+    frontMacro()
 </pre>
 </body>
 </html>

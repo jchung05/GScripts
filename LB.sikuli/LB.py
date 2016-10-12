@@ -1,3 +1,19 @@
+def frontMacro():
+    #Default start at front line
+    deleteRow() #delete Front Line
+    changeTab("RearTab.png") #switch tabs
+    deleteRow() #delete Rear Line
+    replaceRinka() #replace Rear Leader
+    sleep(20) #Wait time to select opponents
+    
+def rearMacro():
+    #I may replace the preset wait times with an eternal wait on a key press
+    replaceNSeira() #put Rear Leader back in
+    changeRow(rear) #place all Rear Line back in
+    changeTab("FrontTab.png") #switch tabs
+    changeRow(front) #place all Front Line back in
+    sleep(30) #Go fight!
+    
 def changeRow(arr):
     changeX = 607
     changeY = 643
@@ -56,25 +72,16 @@ def replaceNSeira():
     textReg.wait("ChangeIdols.png",20)
     if selectReg.exists("Rinka.png"):
         selectChar("Rinka.png")
-#"LargeChangeBtn.png"Pattern("DeleteBtn.png").similar(0.88)"FrontTab.png""RearTab.png""SmallChangeBtn.png""EmptySlot.png"
+#"LargeChangeBtn.png"Pattern("DeleteBtn.png").similar(0.88)"FrontTab.png""RearTab.png""SmallChangeBtn.png""EmptySlot.png""Nagisa.png"
 
 front = ["DivaMomona.png","SukuMomona.png","Nanami.png","Fuka.png"]
-rear = ["Urara.png","Chiyo.png","Ryoko.png","Masumi.png"]
+rear = ["Ryoko.png","Masumi.png","Urara.png","Chiyo.png"]
 selectReg = Region(390,330,679,372)
 unitFormReg = Region(415,434,136,38)
 textReg = Region(532,236,126,26)
 lineReg = Region(586,299,194,59)
 
 while(1):
-    #Default start at front line
-    deleteRow() #delete Front Line
-    changeTab("RearTab.png") #switch tabs
-    deleteRow() #delete Rear Line
-    replaceRinka() #replace Rear Leader
-    sleep(20) #Wait time to select opponents
-    #I may replace the preset wait times with an eternal wait on a key press
-    replaceNSeira() #put Rear Leader back in
-    changeRow(rear) #place all Rear Line back in
-    changeTab("FrontTab.png") #switch tabs
-    changeRow(front) #place all Front Line back in
-    sleep(30) #Go fight!
+#    frontMacro()
+    rearMacro()
+    frontMacro()
