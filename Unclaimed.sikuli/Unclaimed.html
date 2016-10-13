@@ -73,27 +73,43 @@
 <span class="cmt">#Start at home page </span>
 
 <span class="kw">def</span> clickThis(someReg,img):
-    <span class="kw">if</span> someReg.exists(img,<span class="dig">5</span>):
+    <span class="kw">if</span> someReg.exists(img,<span class="dig">7</span>):
         someReg.<span class="skw">click</span>(img)
     <span class="kw">else</span>:
         exit()
 
-<span class="kw">def</span> check():
+
+<span class="kw">def</span> noExit(someReg,img):
+    <span class="kw">if</span> someReg.exists(img,<span class="dig">7</span>):
+        someReg.<span class="skw">click</span>(img)
+
+<span class="kw">def</span> check(img):
     clickThis(Region(<span class="dig">342</span>,<span class="dig">236</span>,<span class="dig">108</span>,<span class="dig">81</span>),<img src="WhatsNew.png" />)
     <span class="skw">wait</span>(<span class="dig">2</span>)
-    clickThis(Region(<span class="dig">338</span>,<span class="dig">284</span>,<span class="dig">295</span>,<span class="dig">185</span>),<img src="1476356492241.png" />)
+    clickThis(Region(<span class="dig">338</span>,<span class="dig">284</span>,<span class="dig">295</span>,<span class="dig">185</span>),img)
 
 <span class="kw">def</span> skip():
     <span class="kw">if</span> Region(<span class="dig">864</span>,<span class="dig">239</span>,<span class="dig">190</span>,<span class="dig">114</span>).exists(<img src="Skip.png" />,<span class="dig">5</span>):
         Region(<span class="dig">864</span>,<span class="dig">239</span>,<span class="dig">190</span>,<span class="dig">114</span>).<span class="skw">click</span>(<img src="Skip.png" />)
 
-<span class="kw">while</span>(<span class="dig">1</span>):
-    check()
-    skip()
-    <span class="cmt">#A breakaway click in case Skip doesn't load in time</span>
-    <span class="skw">click</span>(Location(<span class="dig">715</span>,<span class="dig">470</span>))
-    <span class="skw">sleep</span>(<span class="dig">1</span>)
-    clickThis(Region(<span class="dig">308</span>,<span class="dig">140</span>,<span class="dig">105</span>,<span class="dig">91</span>),<img src="MyPage.png" />)
+<span class="kw">def</span> unclaimedMacro():
+    <span class="kw">while</span>(<span class="dig">1</span>):
+        check(<img src="Unclaimed.png" />)
+        noExit(Region(<span class="dig">864</span>,<span class="dig">239</span>,<span class="dig">190</span>,<span class="dig">114</span>),<img src="Skip.png" />)
+        <span class="cmt">#A breakaway click in case Skip doesn't load in time</span>
+        <span class="skw">click</span>(Location(<span class="dig">715</span>,<span class="dig">470</span>))
+        <span class="skw">sleep</span>(<span class="dig">1</span>)
+        clickThis(Region(<span class="dig">308</span>,<span class="dig">140</span>,<span class="dig">105</span>,<span class="dig">91</span>),<img src="MyPage.png" />)
+
+<span class="kw">def</span> receiveGifts():
+    check(<img src="1476388799525.png" />)
+    noExit(Region(<span class="dig">619</span>,<span class="dig">306</span>,<span class="dig">195</span>,<span class="dig">55</span>),<img src="1476388895704.png" />)
+    <span class="kw">while</span>(<span class="dig">1</span>):
+        clickThis(Region(<span class="dig">612</span>,<span class="dig">340</span>,<span class="dig">210</span>,<span class="dig">65</span>),<img src="1476389190498.png" />)
+
+unclaimedMacro()
+<span class="cmt">#receiveGifts()</span>
+
 </pre>
 </body>
 </html>
