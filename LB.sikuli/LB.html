@@ -70,7 +70,7 @@
 <h2>LB.sikuli</h2> <a href="LB.zip">(Download this script)</a>
 </div>
 <pre class="sikuli-code">
-<span class="kw">def</span> frontMacro():
+<span class="kw">def</span> deleteMacro():
     <span class="cmt">#Default start at front line</span>
     deleteRow() <span class="cmt">#delete Front Line</span>
     changeTab(<img src="RearTab.png" />) <span class="cmt">#switch tabs</span>
@@ -78,13 +78,21 @@
     replaceRinka() <span class="cmt">#replace Rear Leader</span>
     <span class="skw">sleep</span>(<span class="dig">20</span>) <span class="cmt">#Wait time to select opponents</span>
 
-<span class="kw">def</span> rearMacro():
+<span class="kw">def</span> replaceMacro():
     <span class="cmt">#I may replace the preset wait times with an eternal wait on a key press</span>
     replaceNSeira() <span class="cmt">#put Rear Leader back in</span>
     changeRow(rear) <span class="cmt">#place all Rear Line back in</span>
     changeTab(<img src="FrontTab.png" />) <span class="cmt">#switch tabs</span>
     changeRow(front) <span class="cmt">#place all Front Line back in</span>
     <span class="skw">sleep</span>(<span class="dig">30</span>) <span class="cmt">#Go fight!</span>
+
+<span class="kw">def</span> onlyFront():
+    <span class="cmt">#Only to delete &amp; replace front line units</span>
+    deleteRow()
+    <span class="skw">sleep</span>(<span class="dig">15</span>)
+    changeRow(front)
+    <span class="skw">sleep</span>(<span class="dig">20</span>)
+
 
 <span class="kw">def</span> changeRow(arr):
     changeX = <span class="dig">607</span>
@@ -154,9 +162,10 @@ textReg = Region(<span class="dig">532</span>,<span class="dig">236</span>,<span
 lineReg = Region(<span class="dig">586</span>,<span class="dig">299</span>,<span class="dig">194</span>,<span class="dig">59</span>)
 
 <span class="kw">while</span>(<span class="dig">1</span>):
-<span class="cmt">#    frontMacro()</span>
-    rearMacro()
-    frontMacro()
+<span class="cmt">#    replaceMacro()</span>
+<span class="cmt">#    deleteMacro()</span>
+<span class="cmt">#    replaceMacro()</span>
+    onlyFront()
 </pre>
 </body>
 </html>

@@ -1,4 +1,4 @@
-def frontMacro():
+def deleteMacro():
     #Default start at front line
     deleteRow() #delete Front Line
     changeTab("RearTab.png") #switch tabs
@@ -6,13 +6,21 @@ def frontMacro():
     replaceRinka() #replace Rear Leader
     sleep(20) #Wait time to select opponents
     
-def rearMacro():
+def replaceMacro():
     #I may replace the preset wait times with an eternal wait on a key press
     replaceNSeira() #put Rear Leader back in
     changeRow(rear) #place all Rear Line back in
     changeTab("FrontTab.png") #switch tabs
     changeRow(front) #place all Front Line back in
     sleep(30) #Go fight!
+
+def onlyFront():
+    #Only to delete & replace front line units
+    deleteRow()
+    sleep(15)
+    changeRow(front)
+    sleep(20)
+    
     
 def changeRow(arr):
     changeX = 607
@@ -82,6 +90,7 @@ textReg = Region(532,236,126,26)
 lineReg = Region(586,299,194,59)
 
 while(1):
-#    frontMacro()
-    rearMacro()
-    frontMacro()
+#    replaceMacro()
+#    deleteMacro()
+#    replaceMacro()
+    onlyFront()
