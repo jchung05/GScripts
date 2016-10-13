@@ -30,10 +30,10 @@ def unclaimedMacro():
         clickThis(Region(308,140,105,91),"MyPage.png")
 
 def receiveGifts():
-    check("1476388799525.png")
-    noExit(Region(619,306,195,55),"1476388895704.png")
+    check("Inbox.png")
+    noExit(Region(619,306,195,55),"Collect10.png")
     while(1):
-        clickThis(Region(612,340,210,65),"1476389190498.png")
+        clickThis(Region(612,340,210,65),"CollectAll.png")
     
 unclaimedMacro()
 #receiveGifts()

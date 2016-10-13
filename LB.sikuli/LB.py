@@ -80,10 +80,10 @@ def replaceNSeira():
     textReg.wait("ChangeIdols.png",20)
     if selectReg.exists("Rinka.png"):
         selectChar("Rinka.png")
-#"LargeChangeBtn.png"Pattern("DeleteBtn.png").similar(0.88)"FrontTab.png""RearTab.png""SmallChangeBtn.png""EmptySlot.png""Nagisa.png"
+#"LargeChangeBtn.png"Pattern("DeleteBtn.png").similar(0.88)"FrontTab.png""RearTab.png""SmallChangeBtn.png""EmptySlot.png""Fuka.png""Urara.png"
 
-front = ["DivaMomona.png","SukuMomona.png","Nanami.png","Fuka.png"]
-rear = ["Ryoko.png","Masumi.png","Urara.png","Chiyo.png"]
+front = ["Nagisa.png","DivaMomona.png","SukuMomona.png","Nanami.png"]
+rear = ["Rion.png","Ryoko.png","Masumi.png","Chiyo.png"]
 selectReg = Region(390,330,679,372)
 unitFormReg = Region(415,434,136,38)
 textReg = Region(532,236,126,26)
