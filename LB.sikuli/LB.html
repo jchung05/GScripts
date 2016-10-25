@@ -76,7 +76,7 @@
     changeTab(<img src="RearTab.png" />) <span class="cmt">#switch tabs</span>
     deleteRow() <span class="cmt">#delete Rear Line</span>
     replaceRinka() <span class="cmt">#replace Rear Leader</span>
-    <span class="skw">sleep</span>(<span class="dig">20</span>) <span class="cmt">#Wait time to select opponents</span>
+    <span class="skw">sleep</span>(<span class="dig">10</span>) <span class="cmt">#Wait time to select opponents</span>
 
 <span class="kw">def</span> replaceMacro():
     <span class="cmt">#I may replace the preset wait times with an eternal wait on a key press</span>
@@ -84,7 +84,7 @@
     changeRow(rear) <span class="cmt">#place all Rear Line back in</span>
     changeTab(<img src="FrontTab.png" />) <span class="cmt">#switch tabs</span>
     changeRow(front) <span class="cmt">#place all Front Line back in</span>
-    <span class="skw">sleep</span>(<span class="dig">30</span>) <span class="cmt">#Go fight!</span>
+    <span class="skw">sleep</span>(<span class="dig">15</span>) <span class="cmt">#Go fight!</span>
 
 <span class="kw">def</span> onlyFront():
     <span class="cmt">#Only to delete &amp; replace front line units</span>
@@ -154,18 +154,20 @@
         selectChar(<img src="Rinka.png" />)
 <span class="cmt">#"LargeChangeBtn.png"Pattern("DeleteBtn.png").similar(0.88)"FrontTab.png""RearTab.png""SmallChangeBtn.png""EmptySlot.png""Fuka.png""Urara.png"</span>
 
-front = [<img src="Nagisa.png" />,<img src="DivaMomona.png" />,<img src="SukuMomona.png" />,<img src="Nanami.png" />]
+front = [<img src="Nagisa.png" />,<img src="Ai.png" />,<img src="DivaMomona.png" />,<img src="SukuMomona.png" />]
 rear = [<img src="Rion.png" />,<img src="Ryoko.png" />,<img src="Masumi.png" />,<img src="Chiyo.png" />]
+support = [<img src="MaidReika.png" />,<img src="Matsuri.png" />]
 selectReg = Region(<span class="dig">390</span>,<span class="dig">330</span>,<span class="dig">679</span>,<span class="dig">372</span>)
 unitFormReg = Region(<span class="dig">415</span>,<span class="dig">434</span>,<span class="dig">136</span>,<span class="dig">38</span>)
 textReg = Region(<span class="dig">532</span>,<span class="dig">236</span>,<span class="dig">126</span>,<span class="dig">26</span>)
 lineReg = Region(<span class="dig">586</span>,<span class="dig">299</span>,<span class="dig">194</span>,<span class="dig">59</span>)
 
 <span class="kw">while</span>(<span class="dig">1</span>):
+    replaceMacro()
+    deleteMacro()
 <span class="cmt">#    replaceMacro()</span>
-<span class="cmt">#    deleteMacro()</span>
-<span class="cmt">#    replaceMacro()</span>
-    onlyFront()
+<span class="cmt">#    onlyFront()</span>
+
 </pre>
 </body>
 </html>

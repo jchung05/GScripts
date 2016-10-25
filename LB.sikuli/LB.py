@@ -4,7 +4,7 @@ def deleteMacro():
     changeTab("RearTab.png") #switch tabs
     deleteRow() #delete Rear Line
     replaceRinka() #replace Rear Leader
-    sleep(20) #Wait time to select opponents
+    sleep(10) #Wait time to select opponents
     
 def replaceMacro():
     #I may replace the preset wait times with an eternal wait on a key press
@@ -12,7 +12,7 @@ def replaceMacro():
     changeRow(rear) #place all Rear Line back in
     changeTab("FrontTab.png") #switch tabs
     changeRow(front) #place all Front Line back in
-    sleep(30) #Go fight!
+    sleep(15) #Go fight!
 
 def onlyFront():
     #Only to delete & replace front line units
@@ -82,15 +82,16 @@ def replaceNSeira():
         selectChar("Rinka.png")
 #"LargeChangeBtn.png"Pattern("DeleteBtn.png").similar(0.88)"FrontTab.png""RearTab.png""SmallChangeBtn.png""EmptySlot.png""Fuka.png""Urara.png"
 
-front = ["Nagisa.png","DivaMomona.png","SukuMomona.png","Nanami.png"]
+front = ["Nagisa.png","Ai.png","DivaMomona.png","SukuMomona.png"]
 rear = ["Rion.png","Ryoko.png","Masumi.png","Chiyo.png"]
+support = ["MaidReika.png","Matsuri.png"]
 selectReg = Region(390,330,679,372)
 unitFormReg = Region(415,434,136,38)
 textReg = Region(532,236,126,26)
 lineReg = Region(586,299,194,59)
 
 while(1):
+    replaceMacro()
+    deleteMacro()
 #    replaceMacro()
-#    deleteMacro()
-#    replaceMacro()
-    onlyFront()
+#    onlyFront()
