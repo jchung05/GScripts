@@ -2,29 +2,34 @@
 Sleep(5000)
 
 HotKeySet("{ESC}", "Terminate")
+HotKeySet("z", "SkipLoop")
 
 While 1
 	MouseClick("left", 780, 402, 1) ;Continue
-	Sleep(2500)
+	Sleep(4000)
 	MouseClick("left", 945, 595, 1) ;More
-	Sleep(2000)
+	Sleep(3000)
 	MouseClick("left", 945, 595, 1) ;More
-	Sleep(2000)
+	Sleep(3000)
 	MouseClick("left", 1045, 437, 1) ;More
 	Sleep(2000)
 	MouseClick("left", 945, 595, 1) ;Fight!
 	Sleep(5000)
 	
 	MouseClick("left", 760, 322, 1) ;Start Battle
-	Sleep(7000)
+	Sleep(7500)
 	MouseClick("left", 760, 452, 1) ;Item
 	Sleep(2000)
 	MouseClick("left", 975, 532, 1) ;Sword Master Emblem
 	Sleep(4000)
 	
+	$loopskip = 0
 	For $i = 25 To 1 Step -1
 		MouseClick("left", 760, 322, 1) ;Attack
 		Sleep(7000)
+		If $loopskip == 1 Then
+			ExitLoop
+		EndIf
 	Next
 	MouseClick("left", 772, 566, 1) ;Next??
 	Sleep(1000)
@@ -50,6 +55,10 @@ While 1
 	MouseClick("left", 1025, 550, 1) ;Battle Tyrant King Again
 	Sleep(5000)
 Wend
+
+Func SkipLoop()
+	$loopskip = 1
+EndFunc
 
 Func Terminate()
 	Exit
