@@ -6,11 +6,13 @@ HotKeySet("z", "SkipLoop")
 
 While 1
 	MouseClick("left", 780, 402, 1) ;Continue
-	Sleep(4000)
+	Sleep(5000)
 	MouseClick("left", 945, 595, 1) ;More
-	Sleep(3000)
+	Sleep(2000)
 	MouseClick("left", 945, 595, 1) ;More
-	Sleep(3000)
+	Sleep(2000)
+	MouseClick("left", 945, 595, 1) ;More Backup
+	Sleep(2000)
 	MouseClick("left", 1045, 437, 1) ;More
 	Sleep(2000)
 	MouseClick("left", 945, 595, 1) ;Fight!
@@ -24,9 +26,11 @@ While 1
 	Sleep(4000)
 	
 	$loopskip = 0
-	For $i = 25 To 1 Step -1
+	For $i = 18 To 1 Step -1
 		MouseClick("left", 760, 322, 1) ;Attack
-		Sleep(7000)
+		Sleep(7500)
+		MouseClick("left", 760, 322, 1) ;Attack
+		Sleep(500)
 		If $loopskip == 1 Then
 			ExitLoop
 		EndIf
